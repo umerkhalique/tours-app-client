@@ -2,17 +2,17 @@ import React from 'react'
 import CardStyles from './UI/CardStyles'
 import img11 from "../images/img11.jpg";
 
-const Card = ({heading, price, content}) => {
+const Card = ({name, price, info, image}) => {
   return (
     <CardStyles>
-        <img alt="card-image" src={img11} className="card-img" />
+        <img alt="card-image" src={image} className="card-img" />
         <div className="card-content">
             <div className="card-header">
-                <h4>{heading}</h4>
+                <h4>{name}</h4>
                 <h4 class="tour-price">${price}</h4>
             </div>
             <p>
-                {content}
+                {info}
             </p>
         </div>
         <button className="delete">Not Interested</button>
@@ -23,7 +23,8 @@ const Card = ({heading, price, content}) => {
 export default Card
 
 Card.defaultProps = {
-    heading: 'Best of Paris in 7 Days Tour',
+    name: 'Best of Paris in 7 Days Tour',
     price: 1.995,
-    content: 'lorem ipsum dolor sit amet, consectetur adip'
+    info: 'lorem ipsum dolor sit amet, consectetur adip',
+    image: img11
 }
